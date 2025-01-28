@@ -7,9 +7,9 @@ import com.study.hexagonal.architecture.shared.exception.AdviceNotFoundException
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-@RestController
+@Service
 @RequiredArgsConstructor
 public class AdviceSlipApiAdapter implements AdviceApiPort {
 

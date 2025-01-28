@@ -1,5 +1,6 @@
 package com.study.hexagonal.architecture.shared.exception;
 
+import org.apache.catalina.connector.ClientAbortException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
@@ -13,6 +14,7 @@ import java.util.Map;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Object> handleValidationExceptions(
             MethodArgumentNotValidException ex) {
@@ -35,5 +37,10 @@ public class GlobalExceptionHandler {
         errors.put("message", ex.getMessage());
         
         return ResponseEntity.badRequest().body(new HashSet<>(errors.values()));
+    }
+
+    @ExceptionHandler(ClientAbortException.class)
+    public ResponseEntity<String> handleClientAbortException() {
+        return ResponseEntity.badRequest().body("Connection aborted by client.");
     }
 }
