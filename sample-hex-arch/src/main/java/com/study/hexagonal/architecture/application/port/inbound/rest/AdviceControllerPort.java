@@ -1,4 +1,4 @@
-package com.study.hexagonal.architecture.application.port.inbound.web;
+package com.study.hexagonal.architecture.application.port.inbound.rest;
 
 import com.study.hexagonal.architecture.application.dto.request.AdviceRequest;
 import io.swagger.v3.oas.annotations.Operation;
