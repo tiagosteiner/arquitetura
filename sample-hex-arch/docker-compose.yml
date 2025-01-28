@@ -1,0 +1,16 @@
+services:
+  # Posgresql
+  postgres:
+    image: postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: arquitetura-dev
+      POSTGRES_USER: developer
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - '5432:5432'
+
+volumes:
+  postgres:
+    driver: local
