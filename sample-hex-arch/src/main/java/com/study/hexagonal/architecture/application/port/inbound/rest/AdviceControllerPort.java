@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 import com.study.hexagonal.architecture.application.dto.request.AdviceRequest;
+import com.study.hexagonal.architecture.application.dto.response.AdviceResponse;
 
 @Tag(name = "Conselhos", description = "Serviço que gerencia informações de conselhos gratuitos.")
 @RequestMapping(value = "/api/v1/free-advice")
@@ -29,5 +30,5 @@ public interface AdviceControllerPort {
                         description = "Os valores válidos para identicador devem estar entre 1 e 224."),
             })
     @PostMapping("/import")
-    ResponseEntity<Object> importAdvice(@RequestBody AdviceRequest request);
+    ResponseEntity<AdviceResponse> importAdvice(@RequestBody AdviceRequest request);
 }

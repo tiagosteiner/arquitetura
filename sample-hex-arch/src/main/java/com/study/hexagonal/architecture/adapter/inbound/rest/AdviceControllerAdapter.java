@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 import com.study.hexagonal.architecture.application.dto.request.AdviceRequest;
+import com.study.hexagonal.architecture.application.dto.response.AdviceResponse;
 import com.study.hexagonal.architecture.application.port.inbound.rest.AdviceControllerPort;
 import com.study.hexagonal.architecture.application.service.AdviceService;
 
@@ -16,7 +17,7 @@ public class AdviceControllerAdapter implements AdviceControllerPort {
 
     private final AdviceService adviceService;
 
-    public ResponseEntity<Object> importAdvice(@Valid AdviceRequest request) {
+    public ResponseEntity<AdviceResponse> importAdvice(@Valid AdviceRequest request) {
         return adviceService.importAdvice(request.getAdviceId());
     }
 }
