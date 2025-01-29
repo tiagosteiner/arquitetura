@@ -16,7 +16,8 @@ public interface AdviceControllerPort {
 
     @Operation(
             summary = "Importar conselhos grátis",
-            description = "Importar conselho grátis pelo seu identificador.")
+            description =
+                    "Importar conselho grátis pelo seu identificador. Os valores válidos para identicador devem estar entre 1 e 224.")
     @PostMapping("/import")
     ResponseEntity<Object> importAdvice(@RequestBody AdviceRequest request);
 }
