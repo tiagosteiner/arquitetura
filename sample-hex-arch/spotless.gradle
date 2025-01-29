@@ -1,0 +1,9 @@
+spotless {
+    java {
+        googleJavaFormat('1.21.0')
+        indentWithTabs(2)
+        indentWithSpaces(4)
+        importOrder('java|javax', 'org.spring|org.springframework', '', 'com.study.hexagonal.architecture')
+        removeUnusedImports()
+    }
+}

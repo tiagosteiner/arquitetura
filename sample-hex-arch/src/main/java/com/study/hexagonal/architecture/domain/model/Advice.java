@@ -1,9 +1,10 @@
 package com.study.hexagonal.architecture.domain.model;
 
-import com.study.hexagonal.architecture.shared.classes.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+
+import com.study.hexagonal.architecture.shared.classes.BaseEntity;
 
 @Data
 @Builder

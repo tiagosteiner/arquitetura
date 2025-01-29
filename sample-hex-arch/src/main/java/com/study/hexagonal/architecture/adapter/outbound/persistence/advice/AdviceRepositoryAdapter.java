@@ -1,9 +1,11 @@
 package com.study.hexagonal.architecture.adapter.outbound.persistence.advice;
 
+import org.springframework.stereotype.Component;
+
+import lombok.RequiredArgsConstructor;
+
 import com.study.hexagonal.architecture.domain.model.Advice;
 import com.study.hexagonal.architecture.domain.repository.AdviceRepositoryPort;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor

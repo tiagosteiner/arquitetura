@@ -1,7 +1,7 @@
 # Simples aplicação usando Arquitetura Hexagonal
 
 ## Descrição
-Esse projeto realiza um processo muito simples de buscar um registro na API pública https://api.adviceslip.com/ pelo identificador de um registro e salva numa tabela no banco de dados. 
+Esse projeto realiza um processo muito simples de buscar um registro na API pública https://api.adviceslip.com/ pelo identificador e salva numa tabela no banco de dados. 
 
 ## Tecnologias Utilizadas
 - Java 21
@@ -10,6 +10,7 @@ Esse projeto realiza um processo muito simples de buscar um registro na API púb
 - Docker Compose
 - PostgreSQL
 - Flyway
+- Spotless
 
 ## Requisitos
 - Java 21
@@ -51,6 +52,14 @@ Para executar o projeto, execute:
 
 ```bash
 gradle bootRun
+``` 
+
+### Formatação de Código
+O projeto utiliza o Spotless para garantir a formatação do código conforme as regras do Google. Para verificar e formatar o código, execute:
+
+```bash
+gradle spotlessCheck
+gradle spotlessApply
 ``` 
 
 ## Utilização de IDE
