@@ -1,4 +1,4 @@
-package com.study.hexagonal.architecture.application.port.inbound.rest;
+package com.study.hexagonal.architecture.application.port.in.rest;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

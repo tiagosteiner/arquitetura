@@ -1,4 +1,4 @@
-package com.study.hexagonal.architecture.application.port.outbound.rest;
+package com.study.hexagonal.architecture.application.port.out.rest;
 
 import com.study.hexagonal.architecture.shared.dto.AdviceDto;
 

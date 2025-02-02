@@ -1,4 +1,4 @@
-package com.study.hexagonal.architecture.adapter.outbound.persistence.advice;
+package com.study.hexagonal.architecture.infrastructure.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

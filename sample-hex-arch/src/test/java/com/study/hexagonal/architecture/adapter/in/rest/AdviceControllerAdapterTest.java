@@ -1,4 +1,4 @@
-package com.study.hexagonal.architecture.adapter.inbound.rest;
+package com.study.hexagonal.architecture.adapter.in.rest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;

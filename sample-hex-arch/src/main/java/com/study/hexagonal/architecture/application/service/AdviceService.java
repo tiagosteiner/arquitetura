@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 
 import com.study.hexagonal.architecture.application.dto.response.AdviceResponse;
-import com.study.hexagonal.architecture.application.port.outbound.rest.AdviceApiPort;
+import com.study.hexagonal.architecture.application.port.out.rest.AdviceApiPort;
 import com.study.hexagonal.architecture.domain.service.AdviceDomainService;
 
 @Service

@@ -1,4 +1,4 @@
-package com.study.hexagonal.architecture.adapter.outbound.rest;
+package com.study.hexagonal.architecture.adapter.out.rest;
 
 import org.springframework.stereotype.Service;
 
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 
-import com.study.hexagonal.architecture.application.port.outbound.rest.AdviceApiPort;
+import com.study.hexagonal.architecture.application.port.out.rest.AdviceApiPort;
 import com.study.hexagonal.architecture.infrastructure.gateway.adviceslip.AdviceSlipClient;
 import com.study.hexagonal.architecture.shared.dto.AdviceDto;
 import com.study.hexagonal.architecture.shared.exception.AdviceNotFoundException;
