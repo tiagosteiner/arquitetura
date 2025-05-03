@@ -1,6 +1,6 @@
 package com.study.hexagonal.architecture.mock;
 
-import com.study.hexagonal.architecture.application.dto.response.AdviceResponse;
+import com.study.hexagonal.architecture.shared.dto.AdviceResponse;
 
 public class AdviceResponseMock {
     public static AdviceResponse createAdviceResponseSuccess() {
