@@ -10,14 +10,14 @@ import com.study.hexagonal.architecture.shared.dto.AdviceDto;
 @Service
 public class AdviceDomainImplService implements AdviceDomainService {
 
-    private final AdviceRepository adviceRepositoryPort;
+    private final AdviceRepository adviceRepository;
 
     public AdviceDomainImplService(AdviceRepository adviceRepositoryPort) {
-        this.adviceRepositoryPort = adviceRepositoryPort;
+        this.adviceRepository = adviceRepositoryPort;
     }
 
     public void persistAdvice(AdviceDto adviceDto) {
         var adviceEntity = new Advice(adviceDto.getSlip().getId(), adviceDto.getSlip().getAdvice());
-        adviceRepositoryPort.save(adviceEntity);
+        adviceRepository.save(adviceEntity);
     }
 }
