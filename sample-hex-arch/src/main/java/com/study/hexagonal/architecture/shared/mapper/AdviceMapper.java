@@ -6,6 +6,7 @@ import org.mapstruct.Mappings;
 
 import com.study.hexagonal.architecture.adapter.out.entity.JpaAdviceEntity;
 import com.study.hexagonal.architecture.domain.entity.Advice;
+import com.study.hexagonal.architecture.shared.dto.AdviceDto;
 
 @Mapper(componentModel = "spring")
 public interface AdviceMapper {
@@ -16,8 +17,8 @@ public interface AdviceMapper {
     Advice jpaToDomain(JpaAdviceEntity jpaEntity);
 
     @Mappings({
-        @Mapping(target = "id", ignore = true),
-        @Mapping(target = "adviceText", source = "adviceText")
+        @Mapping(target = "id", source = "slip.id"),
+        @Mapping(target = "adviceText", source = "slip.advice")
     })
-    Advice dtoToEntity(JpaAdviceEntity dto);
+    Advice dtoToEntity(AdviceDto dto);
 }
