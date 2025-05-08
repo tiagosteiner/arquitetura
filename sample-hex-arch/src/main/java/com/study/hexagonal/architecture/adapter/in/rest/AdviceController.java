@@ -24,7 +24,7 @@ public class AdviceController {
 
     private final AdviceUseCases adviceUseCases;
 
-    private static final String OUT_OF_RANGE_MESSAGE =
+    protected static final String OUT_OF_RANGE_MESSAGE =
             "Valid values for adviceId must be between 1 and 224.";
 
     @Operation(
