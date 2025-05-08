@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
 
-import com.study.hexagonal.architecture.adapter.out.entity.JpaAdviceEntity;
 import com.study.hexagonal.architecture.domain.entity.Advice;
 import com.study.hexagonal.architecture.domain.repository.AdviceRepository;
 import com.study.hexagonal.architecture.shared.mapper.AdviceMapper;
@@ -18,7 +17,8 @@ public class AdviceRepositoryImpl implements AdviceRepository {
 
     @Override
     public Advice save(Advice advice) {
-        var savedAdvice = jpaAdviceRepository.save(new JpaAdviceEntity(advice));
+        var jpaEntity = adviceMapper.domainToJpa(advice);
+        var savedAdvice = jpaAdviceRepository.save(jpaEntity);
         return adviceMapper.jpaToDomain(savedAdvice);
     }
 }

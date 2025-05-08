@@ -7,7 +7,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.study.hexagonal.architecture.adapter.out.entity.JpaAdvice;
+import com.study.hexagonal.architecture.domain.entity.Advice;
 import com.study.hexagonal.architecture.mock.AdviceDtoMock;
+import com.study.hexagonal.architecture.mock.AdviceMock;
+import com.study.hexagonal.architecture.mock.JpaAdviceMock;
 import com.study.hexagonal.architecture.shared.dto.AdviceDto;
 import com.study.hexagonal.architecture.shared.dto.AdviceSlipDto;
 
@@ -33,6 +37,16 @@ class AdviceMapperTest {
     }
 
     @Test
+    void testMapDtoToEntitySlipNullObject() {
+        var informed = new AdviceDto();
+        informed.setSlip(null);
+
+        var entity = AdviceMapper.MAPPER.dtoToEntity(informed);
+        assertNull(entity.getId());
+        assertNull(entity.getAdviceText());
+    }
+
+    @Test
     void testMapDtoToEntitySlipDtoIdNullObject() {
         var informedSlipDto = new AdviceSlipDto(null, "lalala");
         var informed = new AdviceDto();
@@ -54,5 +68,41 @@ class AdviceMapperTest {
 
         assertEquals(informedSlipDto.getId(), entity.getId());
         assertEquals(informedSlipDto.getAdvice(), entity.getAdviceText());
+    }
+
+    @Test
+    void testMapDomainToJpaWithData() {
+        Advice domainEntity = AdviceMock.createValidAdviceEntity();
+
+        var expected = AdviceMapper.MAPPER.domainToJpa(domainEntity);
+
+        assertEquals(
+                "Remember that spiders are more afraid of you, than you are of them.",
+                expected.getAdviceText());
+        assertEquals(1, expected.getId());
+    }
+
+    @Test
+    void testMapDomainToJpaNullWithData() {
+        var expected = AdviceMapper.MAPPER.domainToJpa(null);
+        assertNull(expected);
+    }
+
+    @Test
+    void testMapJpaToDomainWithData() {
+        JpaAdvice jpaEntity = JpaAdviceMock.createValidJpaAdviceEntity();
+
+        var expected = AdviceMapper.MAPPER.jpaToDomain(jpaEntity);
+
+        assertEquals(
+                "Remember that spiders are more afraid of you, than you are of them.",
+                expected.getAdviceText());
+        assertEquals(1, expected.getId());
+    }
+
+    @Test
+    void testMapJpaToDomainNullWithData() {
+        var expected = AdviceMapper.MAPPER.jpaToDomain(null);
+        assertNull(expected);
     }
 }

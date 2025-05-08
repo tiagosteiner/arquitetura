@@ -5,7 +5,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
-import com.study.hexagonal.architecture.adapter.out.entity.JpaAdviceEntity;
+import com.study.hexagonal.architecture.adapter.out.entity.JpaAdvice;
 import com.study.hexagonal.architecture.domain.entity.Advice;
 import com.study.hexagonal.architecture.shared.dto.AdviceDto;
 
@@ -18,7 +18,13 @@ public interface AdviceMapper {
         @Mapping(target = "id", source = "id"),
         @Mapping(target = "adviceText", source = "adviceText")
     })
-    Advice jpaToDomain(JpaAdviceEntity jpaEntity);
+    JpaAdvice domainToJpa(Advice advice);
+
+    @Mappings({
+        @Mapping(target = "id", source = "id"),
+        @Mapping(target = "adviceText", source = "adviceText")
+    })
+    Advice jpaToDomain(JpaAdvice jpaEntity);
 
     @Mappings({
         @Mapping(target = "id", source = "slip.id"),

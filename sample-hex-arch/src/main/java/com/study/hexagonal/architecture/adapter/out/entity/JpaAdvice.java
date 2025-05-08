@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import com.study.hexagonal.architecture.domain.entity.Advice;
 import com.study.hexagonal.architecture.shared.classes.BaseEntity;
 
 @Data
@@ -14,7 +13,7 @@ import com.study.hexagonal.architecture.shared.classes.BaseEntity;
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "tb_advice")
-public class JpaAdviceEntity extends BaseEntity {
+public class JpaAdvice extends BaseEntity {
 
     @Id
     @Column(name = "id")
@@ -23,9 +22,4 @@ public class JpaAdviceEntity extends BaseEntity {
     @NotNull
     @Column(name = "advice_text")
     private String adviceText;
-
-    public JpaAdviceEntity(Advice advice) {
-        this.id = advice.getId();
-        this.adviceText = advice.getAdviceText();
-    }
 }
