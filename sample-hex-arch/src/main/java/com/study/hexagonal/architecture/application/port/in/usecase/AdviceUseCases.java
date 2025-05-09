@@ -1,4 +1,4 @@
-package com.study.hexagonal.architecture.application.usecase;
+package com.study.hexagonal.architecture.application.port.in.usecase;
 
 import com.study.hexagonal.architecture.shared.dto.AdviceResponse;
 

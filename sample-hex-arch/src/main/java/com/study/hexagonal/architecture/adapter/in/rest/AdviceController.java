@@ -10,22 +10,24 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 
-import com.study.hexagonal.architecture.application.usecase.AdviceUseCases;
+import com.study.hexagonal.architecture.application.port.in.usecase.AdviceUseCases;
 import com.study.hexagonal.architecture.shared.dto.AdviceRequest;
 import com.study.hexagonal.architecture.shared.dto.AdviceResponse;
 
 @Tag(name = "Conselhos", description = "Serviço que gerencia informações de conselhos gratuitos.")
 @RequestMapping(value = "/api/v1/free-advice")
 @RestController
-@RequiredArgsConstructor
 public class AdviceController {
 
     private final AdviceUseCases adviceUseCases;
 
     protected static final String OUT_OF_RANGE_MESSAGE =
             "Valid values for adviceId must be between 1 and 224.";
+
+    public AdviceController(AdviceUseCases adviceUseCases) {
+        this.adviceUseCases = adviceUseCases;
+    }
 
     @Operation(
             summary = "Importar conselhos grátis",

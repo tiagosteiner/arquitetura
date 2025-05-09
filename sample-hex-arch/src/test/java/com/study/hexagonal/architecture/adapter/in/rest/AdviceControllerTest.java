@@ -13,7 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.study.hexagonal.architecture.application.usecase.AdviceUseCases;
+import com.study.hexagonal.architecture.application.port.in.usecase.AdviceUseCases;
 import com.study.hexagonal.architecture.mock.AdviceRequestMock;
 import com.study.hexagonal.architecture.mock.AdviceResponseMock;
 
