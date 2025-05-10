@@ -3,6 +3,13 @@
 ## Descrição
 Esse projeto realiza um processo muito simples de buscar um registro na API pública https://api.adviceslip.com/ pelo identificador e salva numa tabela no banco de dados. 
 
+### Documentação da API
+>Para ter acesso à documentação do serviço, existe um Swagger configurado:
+
+```bash
+http://localhost:8080/swagger-ui/index.html
+```
+
 ## Tecnologias Utilizadas
 - Java 21
 - Spring Boot
